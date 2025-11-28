@@ -1,25 +1,33 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
+title: Vite
+titleTemplate: Next Generation Frontend Tooling
+# add `dark` here to apply dark mode on initial load,
+# since `onMounted` doesn't run during SSR
+pageClass: landing dark
+
 layout: home
+aside: false
+editLink: false
+markdownStyles: false
 
-hero:
-  name: "Portfolio"
-  text: "A VitePress Site"
-  tagline: My great project tagline
-  actions:
-    - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
+<script setup>
+import { useData } from 'vitepress'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
+
+import Hero from './.vitepress/theme/1. hero-section/HeroSection.vue'
+
+const { isDark } = useData()
+
+onMounted(() => {
+  document.documentElement.classList.add('dark')
+})
+
+onBeforeUnmount(() => {
+  document.documentElement.classList.toggle('dark', isDark.value)
+})
+</script>
+<div class="VPHome">
+  <Hero/>
+</div>
