@@ -2,8 +2,7 @@
 layout: about
 ---
 
-test test
-Here is the final version formatted cleanly in **Markdown**:
+Hello my name is *X*
 
 ---
 

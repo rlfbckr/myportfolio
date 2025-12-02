@@ -9,7 +9,7 @@ const nav = theme.value.nav || []
   <header class="border-b border-black bg-white">
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
       <div class="text-lg font-bold tracking-tight">
-        Portfolio
+        Ralf Super Portfolio
       </div>
 
       <ul class="flex gap-4 text-sm font-medium">
